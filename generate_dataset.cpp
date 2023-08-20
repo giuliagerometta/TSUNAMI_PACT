@@ -11,15 +11,16 @@
 int main(int argc, char *argv[])
 {
 
-    if (argc < 4)
+    if (argc < 5)
     {
-        std::cout << "Required arguments: number of couples, sequences length, error rate" << std::endl;
+        std::cout << "Required arguments: number of couples, sequences length, error rate, wf_length" << std::endl;
         exit(1);
     }
 
     int num = atoi(argv[1]);
     int seq_size = atoi(argv[2]);
     unsigned int error_rate = atoi(argv[3]);
+    unsigned int wf_length = atoi(argv[4]);
     unsigned int num_errors = ((seq_size * error_rate) / 100);
     std::vector<int> random_position(seq_size);
     char alphabet[4] = {'A', 'C', 'G', 'T'};
@@ -27,8 +28,7 @@ int main(int argc, char *argv[])
     char *text = (char *)malloc(sizeof(char) * seq_size);
     FILE *seq_file = fopen("sequences.txt", "w");
 
-    for (int i = 0; i < seq_size; random_position[i] = i, i++)
-        ;
+    for (int i = 0; i < seq_size; random_position[i] = i, i++);
 
     std::random_shuffle(random_position.begin(), random_position.end());
 
@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
     fprintf(seq_file, "%d\n", num);
     fprintf(seq_file, "%d\n", seq_size);
     fprintf(seq_file, "%d\n", error_rate);
+    fprintf(seq_file, "%d\n", wf_length);
 
     unsigned ran_idx = 0;
 

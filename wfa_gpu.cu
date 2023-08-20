@@ -54,6 +54,7 @@ int main(int argc, char const *argv[]){
     bool *nullm_d, *nulli_d, *nulld_d;
     short *limitsm_d, *limitsi_d, *limitsd_d;
     short *score_d, *score;
+    int wf_length;
 
 	short mismatch = atoi(argv[1]);
 	short gap_opening = atoi(argv[2]);
@@ -66,7 +67,7 @@ int main(int argc, char const *argv[]){
 		return 1;
 	}
 
-    fscanf(fp, "%d %d %d", &num_couples, &seq_len, &error_rate);
+    fscanf(fp, "%d %d %d %d", &num_couples, &seq_len, &error_rate, &wf_length);
     int pattern_len = seq_len;
     int text_len = seq_len;
 
@@ -87,8 +88,8 @@ int main(int argc, char const *argv[]){
     int eff_hi = hi + (max_score + 1);
     lo = MIN(eff_lo, 0);
     hi = MAX(eff_hi, 0);
-    int wf_length = hi - lo + 1;
-    wf_length*=error_rate;
+    /* int wf_length = hi - lo + 1;
+    wf_length*=error_rate; */
 
     
     CHECK(cudaDeviceReset());
