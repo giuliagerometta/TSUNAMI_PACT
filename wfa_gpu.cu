@@ -42,8 +42,8 @@ __device__ int count_chars(char *pattern, char *text, int seq_len);
 
 int main(int argc, char const *argv[]){
 
-    if(argc!=6){
-		printf("ERROR! Please specify in order: mismatch, gap_opening, gap_extension, file name, check\n");
+    if(argc!=7){
+		printf("ERROR! Please specify in order: mismatch, gap_opening, gap_extension, file name, wf_length, check\n");
 		return 0;
 	}
 
@@ -60,14 +60,15 @@ int main(int argc, char const *argv[]){
 	short gap_opening = atoi(argv[2]);
 	short gap_extension = atoi(argv[3]);
     FILE* fp = fopen(argv[4], "r");
-    check = atoi(argv[5]);
+    wf_length = atoi(argv[5]);
+    check = atoi(argv[6]);
 
     if(fp==NULL){
 		printf("ERROR: Cannot open file.\n");
 		return 1;
 	}
 
-    fscanf(fp, "%d %d %d %d", &num_couples, &seq_len, &error_rate, &wf_length);
+    fscanf(fp, "%d %d %d", &num_couples, &seq_len, &error_rate);
     int pattern_len = seq_len;
     int text_len = seq_len;
 
