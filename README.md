@@ -9,6 +9,7 @@ to compile:
 ```
 $ git clone git@github.com:giuliagerometta/TSUNAMI_PACT.git
 $ cd TSUNAMI_PACT/
+$ git submodule update --init --recursive
 $ make all
 ```
 
