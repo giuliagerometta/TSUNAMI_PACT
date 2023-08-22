@@ -1,8 +1,6 @@
 #!/bin/bash
 
-make all
-
-cd /bin
+cd bin/
 
 echo "generating dataset: 100k reads of 128 bases with 1% error rate"
 ./generate_dataset 100000 128 1
