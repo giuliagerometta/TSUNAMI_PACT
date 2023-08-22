@@ -18,6 +18,7 @@ $ git submodule update --init --recursive
 TSUNAMI repository contains also the original WFA2-Lib software to check the correctness of our GPU results.
 
 ### Compilation
+
 TSUNAMI requires C++14 and [CUDA toolkit](https://developer.nvidia.com/cuda-downloads) >= 11.8.
 To compile TSUNAMI enter the just cloned TSUNAMI repository's folder and simply type:
 ```
@@ -37,8 +38,10 @@ Then within the same bin folder, you can find the wfa_gpu executable which conta
 $ cd bin/
 $ ./wfa_gpu mismatch gap_opening gap_extension input_file_name wf_length check
 ```
+The software will output performance numbers regarding the GPU implementation, if `check` is set to `1` it will also output the multithreaded CPU performance as well as checking the results of the GPU implementation against software.
 
 ### Application input legend
+
 ```
 generate_dataset:
 
