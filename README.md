@@ -45,7 +45,8 @@ sequence_length -> length of the sequence
 error_rate -> between 1 and 100, it represents the percentage of different bases between pattern and text
 ```
 ```
-wfa_gpu
+wfa_gpu:
+
 mismatch -> mismatch affine penalty
 gap_opening -> gap opening affine penalty
 gap_extension -> gap extension affine penalty
