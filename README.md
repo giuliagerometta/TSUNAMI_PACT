@@ -10,7 +10,9 @@ We also compared our design against all the recently released hardware-accelerat
 First clone the repository by typing:
 
 ```
-$ git clone git@github.com:giuliagerometta/TSUNAMI_PACT.git --recursive
+$ git clone https://github.com/giuliagerometta/TSUNAMI_PACT.git
+$ cd TSUNAMI_PACT
+$ git submodule update --init --recursive
 ```
 
 TSUNAMI repository contains also the original WFA2-Lib software to check the correctness of our GPU results.
