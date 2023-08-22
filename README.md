@@ -15,7 +15,7 @@ $ git clone git@github.com:giuliagerometta/TSUNAMI_PACT.git --recursive
 
 TSUNAMI repository contains also the original WFA2-Lib software to check the correctness of our GPU results.
 
-# Compilation
+### Compilation
 TSUNAMI requires C++14 and [CUDA toolkit](https://developer.nvidia.com/cuda-downloads) >= 11.8.
 To compile TSUNAMI enter the just cloned TSUNAMI repository's folder and simply type:
 ```
@@ -36,7 +36,7 @@ $ cd bin/
 $ ./wfa_gpu mismatch gap_opening gap_extension input_file_name wf_length check
 ```
 
-## Application input legend
+### Application input legend
 ```
 generate_dataset:
 
@@ -54,3 +54,8 @@ input_file_name -> name of the file containing the couples of sequences
 wf_length -> length of the wavefront for the alignment
 check -> 0 or 1, flag which sets the verify mode to compare TSUNAMI results with [WFA2-lib](https://github.com/smarco/WFA2-lib.git)
 ```
+### Artifact evaluation
+
+To test our implementation using the same settings shown in our paper, please use one of the pre-defined bash scripts,
+these will automatically create datasets and execute them together with comparing the attained results against software.
+Please refer to the appropriate bash script depending on the GPU you want to test.
