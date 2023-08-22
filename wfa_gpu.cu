@@ -131,8 +131,8 @@ int main(int argc, char const *argv[]){
     gcups/=(1E9);
     gcups/=(time_temp.count());
     gcups*=num_couples;
-    printf("Time: %lf\n", time_temp.count());
-    printf("Estimated GCUPS gpu: : %Lf\n", gcups);
+    printf("GPU Time: %lf\n", time_temp.count());
+    printf("Estimated GCUPS GPU: : %Lf\n", gcups);
 
     CHECK(cudaFree(pattern_d));
     CHECK(cudaFree(text_d));
@@ -171,7 +171,8 @@ int main(int argc, char const *argv[]){
         gcups_cpu/=(1E9);
         gcups_cpu/=(time_temp_cpu.count());
         gcups_cpu*=num_couples;
-        printf("Estimated GCUPS sw: %Lf\n", gcups_cpu);
+	printf("CPU Time: %lf\n", time_temp_cpu.count());
+        printf("Estimated GCUPS SW: %Lf\n", gcups_cpu);
 
         bool equal = true;
         for(int i=0; i<num_couples && equal; i++){  
