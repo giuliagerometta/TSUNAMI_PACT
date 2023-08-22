@@ -40,7 +40,7 @@ echo "aligning..."
 echo "generating dataset: 10k reads of 10240 bases with 2% error rate"
 ./generate_dataset 10000 10240 2
 echo "aligning..."
-./wfa_gpu 4 6 2 sequences.txt 700 1
+./wfa_gpu 4 6 2 sequences.txt 850 1
 
 echo "generating dataset: 500k reads of 128 bases with 5% error rate"
 ./generate_dataset 500000 128 5
